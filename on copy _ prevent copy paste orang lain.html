@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>on copy</title>
+</head>
+<body oncopy="return false" onpaste="return false" oncut="return false">
+	<div id="inputcopy">
+<h3>Something About Us</h3>
+<p>IF Webtoon is a webcomic application and foundation thay aims to give users quality webcomics from various authors and artists, while also providing a source of income for said authors or artists. We give users a bunch of comics to read that can be accessed with ease from a touch (or a click!).</p>
+</div>
+<script>
+	    document.getElementById("inputcopy").addEventListener("copy", function(){
+        alert("ih ga boleh copy");
+    });
+</script>
+</body>
+</html>

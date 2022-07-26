@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form World</title>
+        <style>
+            .contents{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid black;
+                border-width:2px;
+                padding : 15px;
+            }
+            .form-element{
+                margin: 8px;
+                align-items: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contents">
+            <h2 align="center"> Isi data diri</h2>
+            <div class="formContent">
+                <form id="formDataDiri">
+                    <div class="form-element">
+                        <label for="nama">Nama:</label><br>
+                        <input type="text" id="nama" name="nama" placeholder="Nama Anda" required><br>
+                    </div>
+                    <div class="form-element">
+                        <label for="domisili">Domisili:</label><br>
+                        <input type="text" id="domisili" name="domisili" placeholder="Domisili Anda" required><br>
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" value="Submit Data">
+                    </div>
+                </form>
+            </div>
+            <h3 id="messageAfterSubmit"></h3>
+        </div>
+        <script>
+            const submitAction = document.getElementById("formDataDiri");
+            submitAction.addEventListener("submit", function(){
+                const inputNama = document.getElementById("nama").value; // pagil box nama s
+                const inputDomisili = document.getElementById("domisili").value; // panggil input domisili 
+                const hiddenMessage = "Halo "+inputNama+" bagaimana cuacanya di "+inputDomisili+"?"; // gabung semua untuk diisi di h3 bawah 
+                document.getElementById("messageAfterSubmit").innerText = hiddenMessage; // panggil h3 paling bawah untuk ditampilkan hasilnya 
+                event.preventDefault(); // metode menghentikan aksi default dari elemen terjadi. 
+                                        // disini contoh nya Ketika kita melakukan proses submit pada form biasa nya kan langsung repres tuh
+                                        // nah ini akan mencegah proses refresh tersebut..
+            });
+        </script>
+    </body>
+</html>
